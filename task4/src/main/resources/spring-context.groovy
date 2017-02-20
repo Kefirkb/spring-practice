@@ -19,9 +19,16 @@ class MessageProviderEmbeddedImpl implements MessageProvider {
 
 beans {
     message String, 'Hello world!'
-    messageFromEmbedded String, 'Hello world from Embedded!'
     messageProvider(MessageProviderImpl, message:message)
-    messageProviderEmbedded(MessageProviderEmbeddedImpl, message:messageFromEmbedded)
     messageRenderer(MessageRendererImpl, messageProvider:messageProvider)
-    messageRendererFromEmbedded(MessageRendererImpl,messageProvider:messageProviderEmbedded)
+
+    messageFromEmbedded String, 'Hello world from Embedded!'
+
+    messageProviderEmbedded(MessageProviderEmbeddedImpl) {
+        message = messageFromEmbedded
+    }
+
+    messageRendererFromEmbedded(MessageRendererImpl) {
+        messageProvider = ref(messageProviderEmbedded)
+    }
 }
