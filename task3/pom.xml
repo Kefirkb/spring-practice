@@ -43,7 +43,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.kefirkb.Main</mainClass>
+                            <mainClass>com.kefirkb.com.kefirkb.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

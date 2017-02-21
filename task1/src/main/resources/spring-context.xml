@@ -6,11 +6,11 @@
         <constructor-arg value="Hello World!"/>
     </bean>
 
-    <bean id="provider" class="com.kefirkb.MessageProviderImpl">
+    <bean id="provider" class="com.kefirkb.com.kefirkb.MessageProviderImpl">
         <property name="message" ref="message"/>
     </bean>
 
-    <bean id="renderer" class="com.kefirkb.MessageRendererImpl">
+    <bean id="renderer" class="com.kefirkb.com.kefirkb.MessageRendererImpl">
         <property name="messageProvider" ref="provider"/>
     </bean>
 </beans>

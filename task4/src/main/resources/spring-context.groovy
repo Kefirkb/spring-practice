@@ -29,6 +29,6 @@ beans {
     }
 
     messageRendererFromEmbedded(MessageRendererImpl) {
-        messageProvider = ref(messageProviderEmbedded)
+        messageProvider = ref('messageProviderEmbedded')
     }
 }

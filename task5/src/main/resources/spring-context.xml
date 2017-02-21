@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="message" class="java.lang.String" scope="prototype">
+        <constructor-arg value="Hello World!"/>
+    </bean>
+
+    <bean id="provider" class="com.kefirkb.MessageProviderImpl" scope="prototype">
+        <property name="message" ref="message"/>
+    </bean>
+
+    <bean id="lookupMessageRenderer" class="com.kefirkb.AbstractLookupMessageRendererImpl">
+        <lookup-method name = "getMessageProvider" bean ="provider"/>
+    </bean>
+
+    <bean id="methodReplacer" class="com.kefirkb.PrintMessageReplacer"/>
+
+    <bean id="messageRendererWithReplacedMethod" class="com.kefirkb.MessageRendererImpl">
+        <replaced-method name="printMessage" replacer="methodReplacer"/>
+    </bean>
+
+
+</beans>

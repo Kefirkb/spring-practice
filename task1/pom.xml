@@ -49,7 +49,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.kefirkb.Main</mainClass>
+                    <mainClass>com.kefirkb.com.kefirkb.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -58,7 +58,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.kefirkb.Main</mainClass>
+                            <mainClass>com.kefirkb.com.kefirkb.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
